@@ -29,10 +29,15 @@
                     <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg">Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg">Contact</a></li>
                 </ul>
-                <span class="navbar-text">
+                <!-- Login button with data-* attributes-->
+                <!--<span class="navbar-text">
                     <a data-toggle="modal" data-target="#loginModal">
                     <span class="fa fa-sign-in"></span> Login</a>
-                </span>
+                </span>-->
+                <!-- Login button without data-* attributes-->
+                <span class="navbar-text">
+                    <a id="loginid"><span class="fa fa-sign-in"></span>Login</a>
+                </span> 
             </div>
         </div>
     </nav>
@@ -160,8 +165,11 @@
                 <div class="col-12 col-sm text-center align-self-center btn-text">
                     <!-- Button connected with reserve table card--> 
                     <!--<button type="button" class="btn btn-block btn-lg btn-warning"><a href="#Table_Reservation">Reserve Table</a></button>-->
-                    <a role="button" class="btn btn-block nav-link btn-warning"
-                        data-toggle="modal" data-target="#ReserveModal">Reserve Table</a>
+                    <!-- Reserve table button with data-* attributes-->
+                    <!--<a role="button" class="btn btn-block nav-link btn-warning"
+                        data-toggle="modal" data-target="#ReserveModal">Reserve Table</a>-->
+                    <!-- Reserve table button without data-* attributes-->
+                    <a id="#Reservebtn" role="button" class="btn btn-block nav-link btn-warning text-white">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -414,21 +422,49 @@
         });
     </script>-->
 
-    <!-- JS sxcript for play and pause with one button-->
-        <script>-->
-                $("#carouselButton").click(function(){
-                if ($("#carouselButton").children("span").hasClass('fa-pause')) {
-                    $("#mycarousel").carousel('pause');
-                    $("#carouselButton").children("span").removeClass('fa-pause');
-                    $("#carouselButton").children("span").addClass('fa-play');
-                }
-                else if ($("#carouselButton").children("span").hasClass('fa-play')){
-                    $("#mycarousel").carousel('cycle');
-                    $("#carouselButton").children("span").removeClass('fa-play');
-                    $("#carouselButton").children("span").addClass('fa-pause');                    
-                }
+    <!-- JS script for play and pause with one button-->
+    <script>-->
+            $("#carouselButton").click(function(){
+            if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+                $("#mycarousel").carousel('pause');
+                $("#carouselButton").children("span").removeClass('fa-pause');
+                $("#carouselButton").children("span").addClass('fa-play');
+            }
+            else if ($("#carouselButton").children("span").hasClass('fa-play')){
+                $("#mycarousel").carousel('cycle');
+                $("#carouselButton").children("span").removeClass('fa-play');
+                $("#carouselButton").children("span").addClass('fa-pause');                    
+            }
+        });
+    </script>-->
+
+    <!-- JS script for open the login modal-->
+    <script>
+        $(document).ready(function(){
+            $("#loginid").click(function(){
+                $("#loginModal").modal('toggle');
             });
-        </script>-->
+        });
+    </script>
+
+    <!-- JS script for open the table reservation modal-->
+    <script>
+        $(document).ready(function(){
+            $("#Reservebtn").click(function(){
+                $("#ReserveModal").modal('toggle');
+            });
+        });
+    </script>
+    
+    <!--<script>
+        $("#loginid").click(function(){
+                $('#loginModal').modal('show')
+            });
+        $("#Reservebtn").click(function(){
+                $('#ReserveModal').modal('show')
+            });
+    </script>-->
+
 </body>
 
 </html>
